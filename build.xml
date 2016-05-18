@@ -1,0 +1,63 @@
+<project>
+<path id="project.class.path">
+  <fileset dir="./../../selenium/selenium-2.53.0/">
+    <include name="*.jar"/>
+  </fileset>
+  <fileset dir="./../../selenium/selenium-2.53.0/libs/">
+    <include name="*.jar"/>
+  </fileset>
+  <!-- 
+  <fileset dir="./build/classes/GoogleSearch/">
+    <include name="*.class"/>
+  </fileset>
+  -->
+</path>
+
+<path id="myTestClass">
+  <fileset dir="./build/classes/GoogleSearch/">
+    <include name="*.class"/>
+  </fileset>
+</path>
+
+<path id="myJar">
+  <fileset dir="./build/jar/">
+    <include name="*.jar"/>
+  </fileset>
+</path>
+
+<property name="main-class" value="GoogleSearch.TestGoogleSearch" />
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes/GoogleSearch"/>
+        <javac srcdir="src" destdir="build/classes">
+        <classpath refid="project.class.path" />
+        </javac>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/GoogleSearch.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="GoogleSearch.TestGoogleSearch"/>
+                <attribute name="Class-Path" value="${project.class.path}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="jar">
+        <!-- <java jar="build/jar/GoogleSearch.jar" fork="true">  -->
+        <java classname="${main-class}">
+          <classpath>
+       <!--     <pathelement location="${compile}" />  -->
+            <path refid="project.class.path" />
+            <path refid="myJar" />
+          </classpath>
+        </java>
+        
+    </target>
+<target name="main" depends="clean,run" />
+</project>
