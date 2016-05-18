@@ -26,5 +26,6 @@ public class TestGoogleSearch {
     	        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     	        driver.findElement(By.partialLinkText("Wikipedia")).click();
     	        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    	        System.out.println("The current URL has changed to: " + str);
     	   }
 }
