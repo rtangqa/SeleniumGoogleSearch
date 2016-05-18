@@ -20,7 +20,7 @@ public class TestGoogleSearch {
 
     	        //Print the value of variable in the console
     	        System.out.println("The current URL is " + str);
-
+                driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
     	        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("coelacanths");
     	        driver.findElement(By.xpath("//button[@name='btnG']")).click();
     	        driver.manage().timeouts().implicitlyWait(130, TimeUnit.SECONDS);
