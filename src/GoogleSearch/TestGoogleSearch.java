@@ -23,9 +23,9 @@ public class TestGoogleSearch {
                 driver.manage().timeouts().implicitlyWait(1000, TimeUnit.SECONDS);
     	        driver.findElement(By.xpath("//input[@type='text']")).sendKeys("coelacanths");
     	        driver.findElement(By.xpath("//button[@name='btnG']")).click();
-    	        driver.manage().timeouts().implicitlyWait(600, TimeUnit.SECONDS);
+    	        driver.manage().timeouts().implicitlyWait(1200, TimeUnit.SECONDS);
     	        driver.findElement(By.partialLinkText("Wikipedia")).click();
-    	        driver.manage().timeouts().implicitlyWait(600, TimeUnit.SECONDS);
+    	        driver.manage().timeouts().implicitlyWait(1200, TimeUnit.SECONDS);
     	        String str2 = driver.getCurrentUrl();
     	        System.out.println("The current URL has changed to: " + str2);
     	   }
