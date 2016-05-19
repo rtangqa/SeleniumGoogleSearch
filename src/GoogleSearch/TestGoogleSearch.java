@@ -2,6 +2,9 @@ package GoogleSearch;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.util.concurrent.*;
 
 public class TestGoogleSearch {
@@ -38,7 +41,7 @@ public class TestGoogleSearch {
 
                 wait.until(e);
                 currentURL = driver.getCurrentUrl();
-                System.out.println("The current URL has changed to: " + str2);
+                System.out.println("The current URL has changed to: " + currentURL);
                 
     	        /*
     	        String str2 = driver.getCurrentUrl();
