@@ -25,7 +25,7 @@ public class TestGoogleSearch {
     	        driver.findElement(By.xpath("//button[@name='btnG']")).click();
     	        driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
     	        driver.findElement(By.partialLinkText("Wikipedia")).click();
-    	        driver.manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+    	        driver.manage().timeouts().implicitlyWait(10000, TimeUnit.SECONDS);
     	        String str2 = driver.getCurrentUrl();
     	        System.out.println("The current URL has changed to: " + str2);
     	   }
